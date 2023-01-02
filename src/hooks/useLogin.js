@@ -2,6 +2,7 @@ import { useState } from "react"
 import { validateUsername } from '../utilities/validateUsername'
 import { validateEmail } from '../utilities/validateEmail'
 import { validatePassword } from '../utilities/validatePassword'
+import { useNavigate } from "react-router-dom"
 
 // Validaciones, si hay un error devuelve un objeto con el estado de error y el mensaje
 const validateRegister = (username, email, password)=> {
@@ -22,6 +23,7 @@ const useLogin = () => {
     const [action, setAction] = useState(false)
     const [remember, setRemember] = useState(true)
     const [error, setError] = useState({ error: false })
+    const navigate = useNavigate()
 
     // Falta backend para completar
     const onRegisterHandler = (ev)=> {
@@ -33,6 +35,7 @@ const useLogin = () => {
 
     const onAuthHandler = (ev)=> {
         ev.preventDefault()
+        navigate('/feed')
     }
 
     return {

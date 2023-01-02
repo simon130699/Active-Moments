@@ -1,5 +1,7 @@
 // Contenedor del buscador
 div.searchContainer {
+    display: grid;
+    grid-auto-rows: min-content auto;
     position: fixed;
     left: 0;
     right: 0;
@@ -21,7 +23,6 @@ div.searchContainer {
         border-bottom: 1px solid rgb(228, 228, 228);
         padding: 0 1rem;
         height: 55px;
-        margin-bottom: -1rem;
         gap: .8rem;
         align-items: center;
 
@@ -38,6 +39,69 @@ div.searchContainer {
             &::placeholder {
                 color: #777;
             }
+        }
+    }
+
+    div.recentSearches {
+        display: grid;
+        grid-auto-rows: min-content;
+        padding: 1rem;
+        gap: 1rem;
+        overflow: auto;
+
+        span:nth-child(1) {
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        div.item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            div.hashtag {
+                min-width: 48px;
+                min-height: 48px;
+                box-shadow: inset 0 0 4px 1px rgba(0, 0, 0, 0.062);
+                border-radius: 50%;
+
+                span {
+                    margin: auto;
+                    font-size: 2.2rem;
+                    color: rgba(0, 0, 0, 0.26);
+                }
+            }
+
+            img {
+                object-fit: cover;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                h4 {
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+
+                span {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    div.noSearches {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-family: sans-serif;
         }
     }
 }
