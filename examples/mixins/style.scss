@@ -1,0 +1,21 @@
+// Importo los mixins
+@import "./mixin";
+
+div.contenedor {
+    // Estilos que tiene en mobile
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    // Cuando tiene resolucion de tablet (768px) en adelante, pasa a tener estos estilos
+    @include tablet {
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Cuando tiene resolucion de escritorio en adelante, pasa a tener estos
+    @include desktop {
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+}

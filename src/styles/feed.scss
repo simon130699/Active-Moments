@@ -1,0 +1,15 @@
+// Contenedor del feed
+div.feedContainer {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: min-content;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+    transition: transform 300ms ease-in-out;
+
+    // Swipe
+    &.back {
+        transform: translateX(-100vw);
+    }
+}
