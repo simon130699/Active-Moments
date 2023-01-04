@@ -42,6 +42,7 @@ div.searchContainer {
         }
     }
 
+    // Seccion de busquedas recientes
     div.recentSearches {
         display: grid;
         grid-auto-rows: min-content;
@@ -54,11 +55,13 @@ div.searchContainer {
             font-family: sans-serif;
         }
 
+        // Item: usuario/hashtag
         div.item {
             display: flex;
             align-items: center;
             gap: 1rem;
 
+            // Icono hashtag
             div.hashtag {
                 min-width: 48px;
                 min-height: 48px;
@@ -72,19 +75,23 @@ div.searchContainer {
                 }
             }
 
+            // Imagen de usuario
             img {
                 object-fit: cover;
             }
 
+            // Contenedor de usuario
             div {
                 display: flex;
                 flex-direction: column;
 
+                // Nombre de usuario
                 h4 {
                     font-weight: 600;
                     font-size: 1rem;
                 }
 
+                // Nombres
                 span {
                     font-size: 0.9rem;
                 }
@@ -92,6 +99,7 @@ div.searchContainer {
         }
     }
 
+    // Seccion "no hay busquedas recientes"
     div.noSearches {
         display: flex;
         align-items: center;

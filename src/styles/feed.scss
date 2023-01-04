@@ -1,3 +1,5 @@
+@import "./mixins";
+
 // Contenedor del feed
 div.feedContainer {
     display: grid;
@@ -7,6 +9,11 @@ div.feedContainer {
     padding-bottom: 1rem;
     background-color: #fff;
     transition: transform 300ms ease-in-out;
+
+    @include tablet {
+        margin: 0 5.5rem;
+        box-shadow: 0 0 12px 3px rgba(0, 0, 0, 0.041);
+    }
 
     // Swipe
     &.back {

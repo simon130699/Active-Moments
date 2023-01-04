@@ -8,35 +8,47 @@ import likeImg from "../assets/like.png"
 
 const Comments = ({ comments, seeComments, onSeeCommentsHandler }) => {
 
+    // Cantidad de caracteres del comentario
     const [commentLength, setCommentLength] = useState(0)
+    // Si el comentario tiene mas de 1 caracter, saca la opacidad
     let commentSubmitOpacity = commentLength ? {opacity: '1'} : {opacity: '.6'}
 
+    // Si la seccion de comentarios esta abierta, devuelve esta pantalla
     if (seeComments) return(
         <div className="comments">
             <div className="nav">
+                {/* Al hacer click actualiza el estado de "verComentarios", cierra la pantalla */}
                 <img onClick={()=> onSeeCommentsHandler(false)} width={30} height={30} src={arrowImg} alt="Atras" />
                 <span>Comentarios</span>
             </div>
-            {comments.length > 0 && comments.map((comment, index) => {
-                return(
-                    <div className="list">
-                        <div key={comment.user.username + index}>
-                            <img width={40} height={40} src={comment.user.image ? comment.user.image : profileImg} alt={comment.user.username} />
+
+            {/* Si existen comentarios, los itera y los muestra en pantalla */}
+            {comments.length > 0 && <div className="list">
+                {comments.map((comment, index) => {
+                    return(
+                        <div key={comment.username + index}>
+                            {/* Si existe una imagen del usuario la muestra, sino muestra una imagen default */}
+                            <img width={40} height={40} src={comment.image ? comment.image : profileImg} alt={comment.username} />
                             <div>
-                                <span>{comment.user.username}</span>
+                                <span>{comment.username}</span>
                                 <p>{comment.content}</p>
                             </div>
                         </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>}
+
+            {/* Si no existen comentarios muestra una pantalla de no comentarios */}
             {comments.length < 1 && <div className="noComments">
                 <span>Todavía no hay<br/>comentarios</span>
                 <span>¡Agrega el primero!</span>
             </div>}
+            
             <form className="comment">
                 <img width={34} height={34} src={profileImg} alt="Nombre de usuario" />
+                {/* Al cambiar, actualiza el estado con la cantidad de caracteres del comentario */}
                 <input onChange={(ev)=> setCommentLength(ev.target.value.length)} placeholder="Agrega un comentario..." type="text" minLength={1} maxLength={200} required />
+                {/* Si tiene 1 caracter o mas, saca la opacidad al boton publicar */}
                 <input style={commentSubmitOpacity} type="submit" value="Publicar" />
             </form>
         </div>

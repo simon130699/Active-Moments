@@ -1,0 +1,91 @@
+div.profileContainer {
+    background-color: #FEF0EF;
+
+    div.header {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: min-content;
+
+        div.background {
+            width: 100%;
+            height: 140px;
+            background-position: center 10%;
+            background-size: cover;
+        }
+
+        div.user {
+            display: grid;
+            grid-template-columns: min-content auto;
+            padding: .8rem 1.5rem;
+            gap: 1.4rem;
+
+            img {
+                object-fit: cover;
+                transform: translateY(-4.7rem);
+                border-radius: 6px;
+                background-color: #fff;
+                box-shadow: 0 0 8px 1px rgba(34, 34, 34, 0.089);
+            }
+
+            div.info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 0.1rem;
+
+                h3, span {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                h3 {
+                    font-size: 1.1rem;
+                }
+
+                span {
+                    font-size: 1rem;
+                }
+
+            }
+        }
+        
+        div.stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            text-align: center;
+            padding: 0 1.5rem;
+            transform: translateY(-4.4rem);
+
+            span {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                font-family: sans-serif;
+                font-weight: 0;
+                color: rgba(34, 34, 34, 0.781);
+
+                b {
+                    color: #222;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        button.follow {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            background-color: #4080ff;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+            transform: translateY(-3rem);
+            margin: 0 1.5rem;
+        }
+    }
+}
