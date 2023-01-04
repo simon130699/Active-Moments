@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 const useFeed = () => {
+    
     const [swipe, setSwipe] = useState(true)
     
     useEffect(()=> {
